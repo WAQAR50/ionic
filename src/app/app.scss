@@ -1,0 +1,322 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+[padding] h1:first-child,
+[padding] h2:first-child,
+[padding] h3:first-child,
+[padding] h4:first-child,
+[padding] h5:first-child,
+[padding] h6:first-child {
+    margin: {
+        top: 0;
+    }
+}
+
+h1 {
+    font: {
+        size: 26px;
+    }
+    margin: 50px 0 20px;
+}
+h2 {
+    font: {
+        size: 22px;
+    }
+    margin: 40px 0 23px;
+    text: {
+        transform: uppercase;
+    }
+    position: relative;
+    &::after {
+        border: {
+            bottom: 3px double #000; 
+        }
+        bottom: -7px;
+        content: '';
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 50%;
+    }
+}
+h3 {
+    font: {
+        size: 18px;
+    }
+    margin: 25px 0;
+    text: {
+        transform: uppercase;
+    }
+}
+p {
+    font: {
+        size: 14px;
+    }
+    line-height: 1.65;
+}
+ion-content {
+    .fixed-content,
+    .scroll-content {
+        margin-bottom: 64px;
+    }
+}
+ion-header {
+    .toolbar {
+        min-height: 56px !important;
+        padding-top: 7px !important;
+        .toolbar-background {
+            background-color: #121212;
+        }
+        .bar-button-menutoggle {
+            color: #b89f5c;
+            &:hover {
+                color: #fff;
+            }
+        }
+        .back-button {
+            color: #b89f5c;
+            &:hover {
+                color: #fff;
+            }
+        }
+        .title {
+            margin-top: 5px;
+            padding: 0 !important;
+            z-index: -1;
+        }
+        .toolbar-title {
+            color: #b89f5c;
+            font: {
+                size: 16px;
+                weight: 400;
+            }
+            padding: 0;
+            text-align: left;
+            text: {
+                transform: uppercase;
+            }
+        }
+        .toolbar-title-ios {
+            margin: -10px 0 0;
+            padding-left: 140px;
+        }
+    }
+}
+ion-footer{
+    background-color: #fff;
+    ion-grid {
+        background-color: #000;
+        padding: 0 5px;
+        ion-row {
+            ion-col {
+                padding: 0 5px;
+                text-align: center;
+                .button {
+                    color: #fff;
+                    font: {
+                        size: 14px;
+                        weight: 400;
+                    }
+                    margin: 0;
+                    text: {
+                        transform: uppercase;
+                    }
+                    transition: all 0.3s ease-in-out 0s;
+                    &:hover {
+                       color: #b89f5c;
+                    }
+                }
+            }
+        }
+        .social-icons {
+            .button {
+                font: {
+                    size: 16px;
+                }
+            }
+        }
+    }
+}
+.button {
+    color: #b89f5c;
+    transition: all 0.3s ease-in-out 0s;
+    &:hover {
+        color: #000;
+    }
+}
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    margin: 20px 10px;
+    h2 {
+        font-size: 20px;
+        margin: 20px 0;
+        &::after {
+            border-bottom: 0;
+        }
+    }
+}
+.card-title {
+    font: {
+        size: 16px;
+    }
+    line-height: 25px;
+    text: {
+        transform: uppercase;
+    }
+    a {
+        color: #000;
+        font: {
+            size: 16px;
+        }
+        line-height: 25px;
+        text: {
+            transform: uppercase;
+        }
+        &:hover {
+            color: #b89f5c; 
+        }
+    }
+}
+.card-content {
+    font: {
+        size: 14px;
+    }
+    line-height: 1.65;
+}
+.button-default {
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 0;
+    box-shadow: unset;
+    color: #282b2b;
+    font: {
+        size: 12px;
+        weight: 400;
+    }
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 20px;
+    text: {
+        transform: uppercase;
+    }
+    transition: all 0.3s ease-in-out 0s;
+    &:hover {
+        background-color: #d1a734;
+        color: #fff;
+    }
+}
+.item {
+    .item-inner {
+        border-bottom: 1px solid #dedede !important;
+        margin: 10px 0 0;
+        padding-right: 0;
+    }
+    img {
+        height: 80px !important;
+        width: 80px !important;
+    }
+    .item-button {
+        background-color: #f5f5f5;
+        border: 1px solid #f5f5f5;
+        border-radius: 0;
+        box-shadow: unset;
+        color: #282b2b;
+        font: {
+            size: 12px;
+            weight: 400;
+        }
+        height: 30px;
+        margin: 10px 0;
+        padding: 0 20px;
+        text: {
+            transform: uppercase;
+        }
+        transition: all 0.3s ease-in-out 0s;
+        &:hover {
+            background-color: #d1a734;
+            color: #fff;
+        }
+    }
+    &:first-child,
+    &:last-child {
+        border: 0 !important;
+    }
+    &:last-child {
+        .item-inner {
+            border-bottom: 1px solid #dedede !important;
+        }
+    }
+}
+.foto-btn {
+    float: left;
+    width: 100%;
+}
+.menu-title {
+    margin-left: 10px;
+    &.title-ios {
+        .toolbar-title-ios {
+            padding-left: 5px;
+        }
+    }
+}
+.text-input {
+    border: 0;
+    color: #282b2b;
+    font: {
+        size: 14px;
+        weight: 400;
+    }
+    height: 30px;
+    padding: 0 10px;
+    width: 100%;
+}
+.label[floating] {
+    font: {
+        size: 14px;
+        weight: 400;
+    }
+    transform: translate3d(10px, 33px, 0px);
+}
+.input-has-focus,
+.input-has-value {
+    .label[floating] {
+        color: #000;
+        transform: translate3d(0px, 0px, 0px) scale(1);
+    }
+}
+.select {
+    border: 0;
+}
+.logoContainer {
+    float: left;
+    margin-right: 15px;
+    .logo_background {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 2px;
+        display: inline-block;
+        img {
+            width: 80px;
+        }
+    }
+}
+.label-md{
+    margin: 0px 8px 0px 0px;
+}
+.item .item-inner{
+        margin: 0px;    
+}

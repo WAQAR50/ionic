@@ -1,0 +1,60 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="menu-title">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <button ion-button icon-right clear (click)='openMembership()'>
+          Lid Worden
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button ion-button icon-right clear (click)='presentNewsletterModal()'>
+          Nieuwsbrief
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+     <ion-row class="social-icons">
+       <ion-col width-40>
+         </ion-col>
+       
+       <ion-col width-10>
+         <button ion-button clear (click)="openSocial(facebook)"><ion-icon name="logo-facebook"></ion-icon></button>
+       </ion-col>
+       <ion-col width-10>
+         <button ion-button clear (click)="openSocial(linkedin)"><ion-icon name="logo-linkedin"></ion-icon></button>
+       </ion-col>
+         <ion-col width-40>
+         </ion-col>
+       <!--<ion-col width-20>
+         <button ion-button clear (click)="openSocial(youtube)"><ion-icon name="logo-youtube"></ion-icon></button>
+       </ion-col>
+       <ion-col width-20>
+         <button ion-button clear (click)="callNum(phone)"><ion-icon name="call"></ion-icon></button>
+       </ion-col>
+       <ion-col width-20>
+         <button ion-button clear (click)="sendMail(mail)"><ion-icon name="mail"></ion-icon></button>
+       </ion-col>-->
+     </ion-row>
+  </ion-grid>
+</ion-footer>

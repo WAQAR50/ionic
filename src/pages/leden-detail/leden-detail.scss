@@ -1,0 +1,64 @@
+page-leden-detail {
+    .card {
+        .card-title {
+            margin: {
+                bottom: 10px;
+            }
+        }
+        h3 {
+            font: {
+                weight: 700;
+            }
+            margin: {
+                bottom: 10px;
+            }
+        }
+    }
+    .card-list {
+        h3 {
+            color: #000;
+            font: {
+                weight: 700;
+            }
+        }
+        .list {
+            margin: 0px 0 45px;
+        }
+        .list-header {
+            margin: {
+                bottom: 5px;
+            }
+        }
+        .item {
+            padding: {
+                left: 0;
+            }
+            .item-inner {
+                margin: {
+                    left: 0;
+                    top: 0;
+                }
+                ion-label {
+                    font: {
+                        size: 14px;
+                    }
+                    white-space: normal;
+                }
+                a {
+                    color: #b89f5c;
+                    text-decoration: none;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+            ion-avatar {
+                margin: 8px 10px 8px 0;
+            }
+            img {
+                height: 50px !important;
+                width: 50px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+page-membership {
+    .item {
+        padding-left: 0;
+    }
+    h3 {
+        margin: 50px 0 0 !important;
+    }
+    ion-label {
+    white-space: unset;
+    }
+    ion-label.label-md a{
+        text-decoration: none;
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        white-space: normal;
+    }
+    .label-md {
+    margin: 13px 8px 13px 0;
+    }
+}
+
+.checkbox {
+    .checkbox-icon {
+        margin-top: 11px;
+    }
+}

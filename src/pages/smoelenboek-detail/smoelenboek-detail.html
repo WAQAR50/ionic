@@ -1,0 +1,59 @@
+<!--
+  Generated template for the SmoelenboekDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{userDetail.data.display_name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row no-padding class="card-list">
+  <ion-col>
+  <ion-list>
+    <ion-list-header><h3>Contactpersonen</h3></ion-list-header>
+    <ion-item class="item-no-border">
+      <ion-avatar item-left>        
+        <img *ngIf="!userDetail.data.avatar_exits" src="assets/images/dummy_usr.jpg" />
+        <img *ngIf="userDetail.data.avatar_exits" src="{{ userDetail.data.user_avatar }}" />
+      </ion-avatar>
+      <h3> {{userDetail.data.display_name}} </h3>
+    </ion-item>
+    <ion-item class="item-text-wrap">
+      <ion-icon name="person" item-left></ion-icon> {{ userDetail.data.user_meta.first_name }} {{ userDetail.data.user_meta.last_name }}
+    </ion-item>
+    <ion-item class="item-text-wrap">
+      <ion-icon name="call" item-left></ion-icon> {{ userDetail.data.user_meta.phone_number }}
+      <button ion-button color="secondary" (click)="callTo(userDetail.data.user_meta.phone_number)">Call</button>
+    </ion-item>
+    <ion-item class="item-text-wrap">
+      <ion-icon name="mail" item-left></ion-icon> {{ userDetail.data.user_email }}
+      <button ion-button color="secondary" (click)="mailTo(userDetail.data.user_email)">Mail</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="userCompany != false">
+    <ion-list-header><h3>Bedrijfsinformatie</h3></ion-list-header>
+    <ion-item class="item-text-wrap"><ion-icon name="home" item-left></ion-icon> {{userCompany[0].post_meta.comany_address[0]}}, {{userCompany[0].post_meta.comany_zipcode[0]}}, {{userCompany[0].post_meta.comany_place[0]}} </ion-item>
+    <ion-item class="item-text-wrap" *ngIf="userCompany[0].post_meta.phone_number[0] != '-'"><ion-icon name="phone-portrait" item-left></ion-icon> {{userCompany[0].post_meta.phone_number[0]}}</ion-item>
+    <ion-item class="item-text-wrap" *ngIf="userCompany[0].post_meta.comany_fax[0] != '-'"><ion-icon name="call" item-left></ion-icon> {{userCompany[0].post_meta.comany_fax[0]}}</ion-item>
+    <ion-item class="item-text-wrap" *ngIf="userCompany[0].post_meta.company_email != '-'"><ion-icon name="mail" item-left></ion-icon> <a href="mailto:{{userCompany[0].post_meta.company_email[0]}}" >{{userCompany[0].post_meta.company_email}}</a></ion-item>
+    <ion-item class="item-text-wrap" *ngIf="userCompany[0].post_meta.company_website[0] != '-'"><ion-icon name="link" item-left></ion-icon> <a href="#" (click)="openLink(userCompany[0].post_meta.company_website[0])">{{userCompany[0].post_meta.company_website[0]}}</a> </ion-item>
+    <ion-item>{{ userCompany[0].post_content }}</ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="userCompany == false">
+    <ion-list-header><h3>Bedrijfsinformatie</h3></ion-list-header>
+    <ion-item>
+      Deze gebruiker heeft geen lidmaatschap om bedrijfs
+    </ion-item>
+  </ion-list>
+  </ion-col>
+  </ion-row>
+</ion-content>

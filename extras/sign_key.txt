@@ -1,0 +1,4 @@
+Password: word2P@ss
+Keystore Alias: business-tjid
+
+businesstjid-test

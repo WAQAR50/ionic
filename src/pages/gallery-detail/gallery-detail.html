@@ -1,0 +1,39 @@
+<!--
+  Generated template for the GalleryDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <div class="logoContainer">
+      <span class="logo_background">
+        <img src="assets/images/businesstijd-logo.png" />
+      </span>
+    </div>
+    <ion-title>{{ galleryDetail.gallery_title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let image of galleryDetail.images">
+    <img src="{{ image.image_url }}"  (click)="viewGallery(image)" />    
+  </ion-card>
+</ion-content>  
+
+<!-- <ion-content>
+  <ion-slides autoplay="true" loop="true" speed="3000">
+    <ion-slide *ngFor="let image of galleryDetail.images">
+      <img src="{{ image.image_url}}" />
+    </ion-slide>
+  </ion-slides>
+</ion-content> -->
+  <!--<ion-row responsive-sm>
+    <img src="{{ image.image_url }}" (click)="showImages(galleryDetail.images, galleryDetail.gallery_title)" /> 
+    <ion-col *ngFor="let image of galleryDetail.images" width-33>
+      <img src="{{ image.image_url }}" (click)="showImages(galleryDetail.images, image)" />    
+    </ion-col>
+  </ion-row>-->

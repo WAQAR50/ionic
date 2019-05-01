@@ -1,0 +1,8 @@
+{
+  "name": "businesstijd",
+  "integrations": {
+    "cordova": {}
+  },
+  "v2": true,
+  "typescript": true
+}

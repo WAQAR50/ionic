@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Fotoalbum page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <div class="logoContainer">
+      <span class="logo_background">
+        <img src="assets/images/businesstijd-logo.png" />
+      </span>
+    </div>
+    <ion-title>Fotoalbum</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-refresher pulling-text="het laden..." (ionRefresh)="doRefresh($event)"></ion-refresher>
+    <ion-item *ngFor="let gallery_data of fotoGallery">
+      <ion-thumbnail item-left>
+        <img src="{{gallery_data.images[0].image_url}}">
+      </ion-thumbnail>
+      <h3>{{ gallery_data.gallery_title }}</h3>
+      <p>{{ gallery_data.image_count }} Photos</p>
+      <div class="foto-btn">
+        <button ion-button clear item-left (click)="viewGallery(gallery_data)">Bekijk alle</button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

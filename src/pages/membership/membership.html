@@ -1,0 +1,122 @@
+<!--
+  Generated template for the Membership page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <div class="logoContainer">
+      <span class="logo_background">
+        <img src="assets/images/businesstijd-logo.png" />
+      </span>
+    </div>
+    <ion-title>Lid Worden</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <div *ngIf="errorMsg">
+    <div color="secondary" *ngFor="let message of messages"> {{messeges}} </div>
+  </div>
+  
+  <div *ngIf="successMsg">
+    <div color="danger" *ngFor="let error of errors"> {{error}} </div>
+  </div> -->
+
+  <form [formGroup]="membershipForm" (ngSubmit)="submitMembership()">
+  
+    <h3>Bedrijfsgegevens</h3>   
+
+    <div *ngIf="nieuw_bedrijf">
+  
+        <ion-item>
+          <ion-label floating>Bedrijfsnaam *</ion-label>
+          <ion-input type="text" required formControlName="company_name" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Adres *</ion-label>
+          <ion-input type="text" required  formControlName="Adres_5572"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Postcode *</ion-label>
+          <ion-input type="text" required  formControlName="Postcode_5572"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Plaats</ion-label>
+          <ion-input type="text" formControlName="Plaats_5572"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Telefoon</ion-label>
+          <ion-input type="text" formControlName="phone_number_5572"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>E-mailadres *</ion-label>
+          <ion-input type="text" required formControlName="company_email"  ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Website</ion-label>
+          <ion-input type="text" formControlName="Website_5572"></ion-input>
+        </ion-item>
+      </div>
+
+      <h3>Contactpersoon</h3>
+
+      <ion-item>
+        <ion-label floating>Contactpersoon *</ion-label>
+        <ion-input type="text"  required formControlName="btiusername"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Telefoon</ion-label>
+        <ion-input type="text" formControlName="user_phone_number_5572"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>E-mailadres *</ion-label>
+        <ion-input type="text" required  formControlName="user_email" ></ion-input>
+      </ion-item>
+
+      <h3>Betaalgegevens</h3>
+
+      <ion-item>
+        <ion-label floating>Machtiging</ion-label>
+        <ion-select formControlName="machtiging" placeholder="Maak een keuze">
+          <ion-option value="Nee">Nee</ion-option>
+          <ion-option value="Ja">Ja</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Rekeningnummer</ion-label>
+        <ion-input type="text" formControlName="Rekeningnummer_5572"></ion-input>
+      </ion-item>
+        <ion-item>
+        <ion-label block>Kiest u ervoor om ons niet te machtigen, dan brengen wij €25 administratiekosten in rekening.</ion-label>
+      </ion-item>
+
+      <ion-item>
+          <a class="center-txt" href="https://businesstijd.nl/wp-content/uploads/2018/10/digitaal-afschrift-statutenwijziging-Bij-De-Tijd-1.pdf">
+            Hierbij ga ik akkoord met de Algemene Voorwaarden </a>      
+      </ion-item>
+      <ion-item checkbox-membership>
+        <ion-checkbox color="dark" checked="false"  formControlName="terms_and_conditions" [(ngModel)]="cucumber"  (ionChange)="updateCucumber()">Accepteren</ion-checkbox>    
+         <ion-label block>Hierbij ga ik akkoord met de Algemene Voorwaarden *.</ion-label>
+      </ion-item>
+      <ion-item>
+        <button ion-button type="submit" [disabled]="membershipForm.invalid || disableSendButton" block >Registreren</button>
+      </ion-item>
+ 
+  </form>
+</ion-content>

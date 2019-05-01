@@ -1,0 +1,50 @@
+<!--
+  Generated template for the Smoelenboek page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <div class="logoContainer">
+      <span class="logo_background">
+        <img src="assets/images/businesstijd-logo.png" />
+      </span>
+    </div>
+    <ion-title>Leden</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar placeholder="Zoek lid..." (ionInput)="searchData($event)" (ionClear)='clearSearch($event)' (keyup)="searchKeyupEvent($event)"></ion-searchbar>
+  <ion-list>
+    <ion-refresher pulling-text="het laden..." (ionRefresh)="doRefresh($event)"></ion-refresher>
+    <ion-item *ngFor="let user of users">
+      <ion-thumbnail item-left>
+        <img *ngIf="!user.data.avatar_exits" src="assets/images/dummy_usr.jpg" />
+        <img *ngIf="user.data.avatar_exits" src="{{ user.data.user_avatar }}" />
+      </ion-thumbnail>
+      <h3>{{ user.data.display_name }}</h3>
+      <h4 *ngFor="let company of user.data.user_company">
+     <strong> {{ company.post_type}}:</strong>
+        
+          <span *ngIf="company.post_meta.company_website == 0">{{company.post_title}}</span>
+          
+          <a *ngIf="company.post_meta.company_website != 0" target="_blank"  href="{{company.post_meta.company_website}}" >{{company.post_title}}</a> 
+         
+      </h4>
+      <div class="foto-btn">
+     
+         <button ion-button color="secondary" (click)="mailTo(user.data.user_email)">E-Mail</button>
+     <!-- <button ion-button clear item-right (click)="viewDetail(user)">Uitzicht</button>-->
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMoreUsers($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Laad meer gebruikers..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

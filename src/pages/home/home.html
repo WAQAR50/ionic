@@ -1,0 +1,78 @@
+<!--
+  Generated template for the Home page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <div class="logoContainer">
+      <span class="logo_background">
+        <img src="assets/images/businesstijd-logo.png" />
+      </span>
+    </div>
+    <ion-title>Welkom</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher pulling-text="het laden..." (ionRefresh)="doRefresh($event)"></ion-refresher>
+  <h1 class="center-txt">Welkom op de website van Businessclub Bij de Tijd</h1>
+    <h3 class="center-txt">MET EN VOOR ELKAAR</h3>
+  <p class="center-txt">Ben jij een middelkleine ondernemer uit (de omgeving van) de gemeente Rijssen-Holten en heb je een jeugdige kijk op het leven? Met 
+    meer dan 120 leden is Businessclub Bij de Tijd een van de grootste en gezelligste MKB-netwerken van de Reggestreek. Ons doel: op een ongedwongen manier 
+    positief elkaars netwerk versterken, van elkaar leren en elkaar iets gunnen. Dat is nieuw noaberskap..</p>
+  <h1 class="center-txt">LIDMAATSCHAP</h1>
+    <h2 class="center-txt">KOMT DER BIE!</h2>
+    <h3 class="center-txt">Het mag leuk blijven</h3>
+    <p class="center-txt">Voor maar € 295,- per jaar is ons netwerk toegankelijk voor professionals uit alle denkbare sectoren, naast lokale overheidsinstanties. 
+      Eens per maand komen we informeel samen en krijgt een bedrijf de kans zich te presenteren. Clubuitjes, gezellige barbecues, kerstvieringen en nog veel meer 
+      zijn bij de prijs inbegrepen. Wil je weten hoe dat gaat en kennismaken met meer dan 120 lokale ondernemers? Neem dan snel contact op met het bestuur en kom eens 
+      langs.</p>
+
+ <h3 class="center-txt">Hulp (vragen) waar nodig</h3>
+  <p class="center-txt">Naast gezelligheid is hulp en steun aan elkaar een belangrijk voordeel van onze club. Leden van Businessclub Bij de Tijd kunnen 
+    zich inschrijven voor coaching-programma’s. Heb je bijvoorbeeld moeite met je administratie of weet je niet goed hoe je jouw prachtige product of dienst aan 
+    de man brengt, dan kun je professionele begeleiding krijgen van professionals uit desbetreffende branche. Maar ook voor persoonlijke begeleiding heeft Businessclub 
+    Bij de Tijd verschillende professionals als lid.</p>
+
+ <h3 class="center-txt">Hulp (vragen) waar nodig</h3>
+  <p class="center-txt">Op het Leden-gedeelte van deze site staat (naast onze statuten) actuele ledeninformatie. Op het Tijdplein kunnen leden vraag en aanbod
+     uitwisselen. Gemakkelijk informatie uitwisselen en direct zakendoen. Want daar gaat het uiteindelijk om.</p>
+ <p class="center-txt button-home"> <button  ion-button clear item-right  (click)="openMembership()"> AANMELDEN ALS LID </button>  </p>
+
+  <h2 class="center-txt">VISIE</h2>
+    <h3 class="center-txt">Hecht en oprecht</h3>
+  <p class="center-txt">Wij geloven dat (h)echte business ontstaat uit oprechte samenwerking tussen ondernemers. Businessclub Bij de Tijd vormt een oersterk regionaal 
+    platform, met maandelijkse ontmoetingen en voortdurende uitwisseling van ideeën. Zo ontstaan energieke, zakelijke vriendschappen.</p>
+
+  <h3 class="center-txt">Wie wij zijn</h3>
+  <p class="center-txt">Wij zijn business club “Bij de Tijd!” Gedreven lokale ondernemers met het hart op de juiste plaats. Door ons zakelijk-sociale vangnet blijft
+     jouw business altijd up-to-date.</p>
+
+ <h3 class="center-txt">Waar we voor staan</h3>
+  <p class="center-txt">Sommige leden draaien al een tijdje mee, anderen hebben nog maar net de KvK-brief thuis. Toch zijn we allemaal eigenzinnige ondernemers 
+    die allemaal min of meer dezelfde dingen meemaken. Dat is wat ons bindt. Dat praat van begin af aan een stuk makkelijker. Al deze zelfstandige professionals 
+    maken Businessclub Bij de Tijd authentiek, energiek, samenwerkend en innovatief. Iets voor jou? Kom gerust een avond meemaken.</p>
+  
+  <h2 class="center-txt">Laatste Event</h2>
+  <ion-card>
+    <img *ngIf="!event_images" src="assets/images/default_thumb.jpg" />
+    <img *ngIf="event_images" src="{{ event_images }}" />
+    <ion-card-content>
+      <ion-card-title>{{ post_title }}</ion-card-title>
+      
+      <h2>Gebeurtenistiming</h2>
+      <p><strong>Begin:</strong> {{ event_start_time | amParse:'YYYY-MM-DD HH:mm:ss'| amLocale:'nl' | amDateFormat:'DD MMMM  YYYY, HH:mm:ss'}}</p>
+      <p><strong>Einde:</strong> {{ event_end_time | amParse:'YYYY-MM-DD HH:mm:ss'| amLocale:'nl' | amDateFormat:'DD MMMM  YYYY, HH:mm:ss'}}</p>
+      <button  ion-button clear item-right  (click)="showEventDetail()"> Bekijk gebeurtenisdetails </button> 
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

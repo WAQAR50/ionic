@@ -1,0 +1,15 @@
+page-gallery-slides {
+    .popupBtn {
+        float: left;
+        margin: 0 10px;
+    }
+    .popupTitle {
+        float: left;
+        .toolbar-title-ios {
+            padding-left: 70px;
+        }
+    }
+    .popupBtn{
+        display: none;
+    }
+}
